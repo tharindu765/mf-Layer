@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="RootNood" prefHeight="695.0" prefWidth="1134.0" style="-fx-background-color: white; -fx-background-radius: 50;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.MaterialFormController">
+   <children>
+      <TableView fx:id="tblSupplier" layoutY="364.0" prefHeight="331.0" prefWidth="1134.0">
+        <columns>
+          <TableColumn fx:id="colMaterialName" prefWidth="233.0" text="Material Name" />
+          <TableColumn fx:id="colQty" minWidth="0.0" prefWidth="154.0" text="Quantity" />
+            <TableColumn fx:id="colSupplierName" prefWidth="267.0" text="Supplier Name" />
+            <TableColumn fx:id="colDate" prefWidth="191.0" text="Supplier Date" />
+            <TableColumn fx:id="colTotalPrice" prefWidth="143.0" text="Total Price" />
+            <TableColumn fx:id="colAction" prefWidth="166.0" text="Action" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="33.0" layoutY="31.0" opacity="0.61" prefHeight="200.0" prefWidth="1069.0" style="-fx-background-color: #92C7CF; -fx-background-radius: 50;" />
+      <JFXButton buttonType="RAISED" layoutX="720.0" layoutY="76.0" onAction="#btnAddSupplier" prefHeight="24.0" prefWidth="111.0" style="-fx-background-color: green; -fx-background-radius: 50;" text="new" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <DatePicker fx:id="datePicker" layoutX="912.0" layoutY="162.0" onKeyReleased="#txtDateAction" prefHeight="24.0" prefWidth="140.0" promptText="Date" style="-fx-background-radius: 50;" />
+      <Label fx:id="lblMaterialId" layoutX="990.0" layoutY="80.0" text="01">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="890.0" layoutY="80.0" text="Material ID : ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="450.0" layoutY="-1.0" text="Material Form">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="167.0" text="Supplier Date :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQty" layoutX="562.0" layoutY="165.0" onAction="#txtQty" onKeyReleased="#txtQtyAction" prefHeight="24.0" prefWidth="140.0" promptText="Quantity" style="-fx-background-radius: 50;" />
+      <Label layoutX="424.0" layoutY="169.0" text="Quantity           :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUnitPrice" layoutX="203.0" layoutY="165.0" onAction="#txtUnitPrice" onKeyReleased="#txtPriceAction" prefHeight="24.0" prefWidth="171.0" promptText="Unit Price" style="-fx-background-radius: 50;" />
+      <Label layoutX="70.0" layoutY="169.0" text="Unit Price(Rs)   :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="79.0" text="Material Name  :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="420.0" layoutY="79.0" text="Supplier Name  :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbSupplierName" layoutX="557.0" layoutY="75.0" onAction="#cmbSupplierNameAction" prefWidth="150.0" promptText="Supplier Name" style="-fx-background-radius: 50;" />
+      <JFXButton buttonType="RAISED" layoutX="960.0" layoutY="287.0" onAction="#btnReset" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #3498db; -fx-background-radius: 50; -fx-text-fill: white;" text="Reset" />
+      <JFXButton buttonType="RAISED" layoutX="787.0" layoutY="287.0" onAction="#brnSearch" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #3498db; -fx-background-radius: 50; -fx-text-fill: white;" text="Search">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-find-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="366.0" layoutY="295.0" onAction="#btnUpdate" prefHeight="42.0" prefWidth="160.0" style="-fx-background-color: #3498db; -fx-background-radius: 50; -fx-text-fill: white;" text="Update" />
+      <JFXButton buttonType="RAISED" layoutX="191.0" layoutY="295.0" onAction="#btnAdd" prefHeight="42.0" prefWidth="160.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 50;" text="Place Material" />
+      <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="295.0" onAction="#btnAddToCart" prefHeight="42.0" prefWidth="160.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 50;" text="Add To Cart" />
+      <ComboBox fx:id="cmdMaterialName" layoutX="200.0" layoutY="77.0" onAction="#cmdmaterialOnAction" prefHeight="24.0" prefWidth="171.0" promptText="Material Name" style="-fx-background-radius: 50;" />
+   </children>
+</AnchorPane>
